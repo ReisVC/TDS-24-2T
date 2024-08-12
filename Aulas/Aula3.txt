@@ -1,1 +1,10 @@
+<<<<<<< HEAD
+Code.
+Git Clone
+Git Status
+Git Add
+Git Commit -m "mensagem"
+Git Push
+=======
 
+>>>>>>> 9511f60abca96d5ce0c80326ece99b27d86e0703
