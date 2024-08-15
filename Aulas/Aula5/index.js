@@ -17,3 +17,8 @@ d = e // Variável b passa a valer 10
 c = d // Variável a passa a valer 10
 
 console.log(c, d, e) // Imprime os valores 10, 10 e 10
+
+//O código recebe dados de entrada do usuário através do prompt
+let p = prompt("Quantas horas você trabalha por dia?") //Variável p pode ser subtituída pelo nome horasPorDia
+let t = prompt("Quanto você recebe por dia?") //Variável t pode ser subtituída pelo nome salarioPorDia
+console.log('Você recebe',t,'/',p,'por hora.')
