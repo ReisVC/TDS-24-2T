@@ -10,6 +10,9 @@ Nomes: Vitor Reis e Lucas Silva 	Turma: TDS24-2T
 O código deve receber um valor de entrada representando a temperatura em graus celsius, 
 processar os valores convertendo para graus fahrenheit e apresentar os dados na tela.
 
+O código deve primeiramente receber a entrada de dados pelo usuário através do prompt; Em seguida deve ser feito o cálculo
+para conversão de Celsius para Fahrenheit com a fórmula "(celN)*(9/5)+32", então o resultado é impresso com a função Alert() sempre com duas casas decimais após a vírgula.
+
 
 ----------------------------Testes----------------------------
 
