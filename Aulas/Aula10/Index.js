@@ -176,3 +176,47 @@ console.log('Você pode cursar na nossa faculdade')
 }
 */
 
+/*
+let choose = Math.floor(Math.random()*3)
+// console.log(choose)
+
+let jokenpo = prompt('Escolha entre Pedra, Papel ou Tesoura')
+console.log(`Você escolheu ${jokenpo}`)
+
+switch (choose) {
+  case 0:
+    console.log('Seu inimigo escolheu Tesoura')
+    break
+
+  case 1: 
+    console.log('Seu inimigo escolheu Papel')
+    break
+
+  case 2:
+    console.log('Seu inimigo escolheu Pedra')
+}
+
+if(jokenpo.toLowerCase() === 'pedra' && choose===0) {
+  console.log('Pedra amassa Tesoura, você ganhou!!')
+} else if(jokenpo.toLowerCase() === 'pedra' && choose===1) {
+  console.log('Papel enrola Pedra, você perdeu!!')
+} else if(jokenpo.toLowerCase()=== 'pedra' && choose===2) {
+  console.log('Pedra empata com pedra, vocês empataram!!')
+}
+
+if(jokenpo.toLowerCase() === 'tesoura' && choose===0) {
+  console.log('Tesoura não corta tesoura, vocês empataram!!')
+} else if(jokenpo.toLowerCase() === 'tesoura' && choose===1) {
+  console.log('Tesoura corta papel, você ganhou!!')
+} else if(jokenpo.toLowerCase()=== 'tesoura' && choose===2) {
+  console.log('Pedra amassa tesoura, você perdeu!!')
+}
+
+if(jokenpo.toLowerCase() === 'papel' && choose===0) {
+  console.log('Tesoura corta papel, você perdeu!!')
+} else if(jokenpo.toLowerCase() === 'papel' && choose===1) {
+  console.log('Papel não enrola papel, vocês empataram!!')
+} else if(jokenpo.toLowerCase()=== 'papel' && choose===2) {
+  console.log('Papel enrola pedra, você ganhou!!')
+}
+  */
