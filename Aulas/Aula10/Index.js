@@ -176,7 +176,7 @@ console.log('Você pode cursar na nossa faculdade')
 }
 */
 
-/*
+
 let choose = Math.floor(Math.random()*3)
 // console.log(choose)
 
@@ -219,4 +219,4 @@ if(jokenpo.toLowerCase() === 'papel' && choose===0) {
 } else if(jokenpo.toLowerCase()=== 'papel' && choose===2) {
   console.log('Papel enrola pedra, você ganhou!!')
 }
-  */
+  
