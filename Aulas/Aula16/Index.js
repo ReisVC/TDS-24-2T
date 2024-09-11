@@ -70,21 +70,33 @@ soma(100, 400)
 let adicionarItem = (inventario) => {
   let condicao = true
   while(condicao) {
-  item = prompt('Escreva um item para adicionar').toUpperCase()
+    if(inventario.length >= 5) {
+      condicao = false
+      alert("SEU INVENTÁRIO ESTÁ CHEIO")
+    } else {
+  item = prompt('Escreva um item para adicionar')
   inventario.push(item)
+    
 
   let pergunta = prompt('Você deseja parar?')
   if(pergunta.toLowerCase()=== 'sim') {
     condicao = false
+  } else {
+    if(inventario.length >= 5) {
+      condicao = false
+      alert("SEU INVENTÁRIO ESTÁ CHEIO")
+    }
   }
   }
+}
 }
 
 let listarItens = (inventario) => {
   alert(`Seus itens são: ${inventario}`)
 }
 
-let removerItem = (item, inventario) => {
+let removerItem = (inventario) => {
+  item = prompt('Escreva o item que quer excluir!')
   const index = inventario.indexOf(item)
   inventario.splice(index,1)
 }
@@ -104,7 +116,7 @@ while(user !== 0) {
   }
 
   if(user===3) {
-    removerItem(remover, inventario)
+    removerItem(inventario)
   }
 }
 
