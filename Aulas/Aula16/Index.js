@@ -78,8 +78,8 @@ let adicionarItem = (inventario) => {
   inventario.push(item)
     
 
-  let pergunta = prompt('Você deseja parar?')
-  if(pergunta.toLowerCase()=== 'sim') {
+  let pergunta = prompt('Você deseja parar? S/N')
+  if(pergunta.toUpperCase()=== 'S') {
     condicao = false
   } else {
     if(inventario.length >= 5) {
@@ -119,4 +119,6 @@ while(user !== 0) {
     removerItem(inventario)
   }
 }
+
+
 
