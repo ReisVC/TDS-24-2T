@@ -348,12 +348,13 @@ let escolhaJogador;
 
 while (escolhaJogador > 0 || escolhaJogador < 5) {
   escolhaJogador = Number(
-    prompt("Você encontrou Sauron, o que irá fazer? Escolha o número.")
+    prompt("Você encontrou o inimigo.")
   );
   
   // Aqui inicia a lógica de batalha-Luut
   if(escolhaJogador===1){               
       alert("Prepare-se para Batalha!")
+      // PERSONAGEM DO JOGADOR É seuHeroi
   
   }
 
