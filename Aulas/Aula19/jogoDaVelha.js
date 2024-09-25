@@ -41,6 +41,8 @@ function retornaPosicao(letra) {
 }
 
 function mostrarTabuleiro() {
+  console.clear()
+  
   console.log(" ");
   console.log(tabuleiro[0]);
   console.log(tabuleiro[1]);
@@ -135,7 +137,7 @@ function verificarEmpate() {
   let condicao = true;
   for (let i = 0; i < tabuleiro.length; i++) {
     for (let j = 0; j < tabuleiro[i].length; j++) {
-      if (tabuleiro[i][j] === "-") {
+      if (tabuleiro[i][j] > 0&&tabuleiro[i][j] < 10) {
         condicao = false;
       }
     }
@@ -153,7 +155,7 @@ function letraX() {
   linhaX = posicao[0];
   colunaX = posicao[1];
 
-  if (tabuleiro[linhaX][colunaX] === "-") {
+  if (tabuleiro[linhaX][colunaX] < 10 && tabuleiro[linhaX][colunaX] > 0) {
     jogo = 0;
     tabuleiro[linhaX][colunaX] = "X";
     verificarVitoria("X");
@@ -168,7 +170,7 @@ function letraO() {
   linhaO = posicaoO[0];
   colunaO = posicaoO[1];
 
-  if (tabuleiro[linhaO][colunaO] === "-") {
+  if (tabuleiro[linhaO][colunaO] > 0 && tabuleiro[linhaO][colunaO] < 10) {
     jogo = 0;
     tabuleiro[linhaO][colunaO] = "O";
     verificarVitoria("O");
@@ -211,9 +213,9 @@ while (jogarNovamente === "sim") {
   jogo = 0
   jogarNovamente = 'Não'
   tabuleiro = [
-    ["-", "-", "-"],
-    ["-", "-", "-"],
-    ["-", "-", "-"],
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+    ['7', '8', '9'],
   ];
 
   jogoDaVelha();
