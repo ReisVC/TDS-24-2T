@@ -220,6 +220,9 @@ while (jogarNovamente === "sim") {
 
   jogoDaVelha();
   mostrarTabuleiro();
+  verificarVitoria('X')
+  verificarVitoria('O')
+  verificarEmpate()
   jogarNovamente = read.question("Deseja jogar novamente? ").toLowerCase();
 }
 
