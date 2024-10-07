@@ -13,12 +13,27 @@ function validarNome() {
         }
     }
 
+    let alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúãõüïäëâêîôûàèìòùÁÉÍÓÚÃÕÜÏÄËÂÊÎÔÛÀÈÌÒÙ"
+
+
+    
+    if(personagem.nome == "") {
+      document.getElementById("par").innerHTML = "Você precisa colocar um nome!" 
+      return false;
+    }
     // Condicional para verificar quantidade de letras no nome;
     if(personagem.nome.length < 3) {
     document.getElementById("par").innerHTML = "Nome muito curto, tente um nome maior!";
     } else if(personagem.nome.length > 20) {
     document.getElementById("par").innerHTML = "Nome muito longo, tente um nome menor!";
     } else {
+      for(let letra of personagem.nome) {
+         if(alfabeto.includes(letra)) {
+         } else {
+            document.getElementById("par").innerHTML = "Você não pode colocar caracteres especiais!"
+            return false
+         }
+       }
         return true;
     }
 }
@@ -43,7 +58,7 @@ function validarVida() {
     vidaMax += 7;
     break;
 
-    case "Ocarina":
+    case Ocarina:
     vidaMax += 10;
     break;
 
@@ -56,8 +71,18 @@ function validarVida() {
     return false;
  }
 
+ if(personagem.hp === "") {
+   document.getElementById("par").innerHTML = "Você precisa colocar um valor de vida!"
+   return false
+ }
  // Condicional que verifica nível máximo e mínimo permitido pro personagem;
- if(personagem.hp <= 0) {
+ if(personagem.hp % 2 === 1 || personagem.hp % 2 === 0) {
+ } else {
+   document.getElementById("par").innerHTML = "O valor de vida precisa ser um númeo inteiro!"
+   return false;
+ }
+
+  if(personagem.hp <= 0) {
     document.getElementById("par").innerHTML = "Nível de vida muito baixo, tente uma vida maior!"
  } else if(personagem.hp > vidaMax) {
     document.getElementById("par").innerHTML = `Nível de vida alto, o limite máximo graças ao item ${personagem.item} é ${vidaMax}!`
@@ -98,6 +123,18 @@ function validarAtaque() {
     document.getElementById("par").innerHTML = "Arma não encontrada!";
     return false;
  }
+
+ if(personagem.ataque === "") {
+   document.getElementById("par").innerHTML = "Você precisa colocar um valor de ataque!"
+   return false
+ }
+
+ if(personagem.ataque % 2 === 1 || personagem.ataque % 2 === 0) {
+} else {
+  document.getElementById("par").innerHTML = "O valor do ataque precisa ser um númeo inteiro!"
+  return false;
+}
+
 
  // Condicional que verifica valor mínimo e máximo permitido para o personagem;
  if(personagem.ataque <= 0) {
@@ -169,6 +206,15 @@ function validarDefesa() {
     return false;
  }
 
+ if(personagem.defesa === "") {
+   document.getElementById("par").innerHTML = "Você precisa colocar um valor de defesa!"
+   return false
+ }
+ if(personagem.defesa % 2 === 1 || personagem.defesa % 2 === 0) {
+} else {
+  document.getElementById("par").innerHTML = "O valor do defesa precisa ser um númeo inteiro!"
+  return false;
+}
  // Condicional que valida a defesa escolhida pelo usuário;
  if(personagem.defesa <= 0) {
     document.getElementById("par").innerHTML = "Erro! Valor de Defesa muito baixo!"
@@ -197,13 +243,22 @@ function validar() {
     event.preventDefault()
 
     // Variáveis que guardam os valores de cada escolha do usuário;
-    personagem.nome = document.getElementById("nome").value;
-    personagem.hp = document.getElementById("hp").value;
-    personagem.ataque = document.getElementById("ataque").value;
-    personagem.defesa = document.getElementById("defesa").value;
-    personagem.arma = document.getElementById("select").value;
-    personagem.item = document.getElementById("select2").value;
- 
+   //  personagem.nome = document.getElementById("nome").value;
+   //  personagem.hp = document.getElementById("hp").value;
+   //  personagem.ataque = document.getElementById("ataque").value;
+   //  personagem.defesa = document.getElementById("defesa").value;
+   //  personagem.arma = document.getElementById("select").value;
+   //  personagem.item = document.getElementById("select2").value;
+   //  const btnValidar = document.getElementById("btn-validar");
+  
+   personagem.nome = document.getElementById("nomeTabela").value
+   personagem.hp = document.getElementById("vidaTabela").value
+   personagem.ataque = document.getElementById("ataqueTabela").value
+   personagem.defesa = document.getElementById("defesaTabela").value
+   personagem.item = document.getElementById("itemTabela").value
+   personagem.arma = document.getElementById("armaTabela").value
+
+
     // Chamando todas as validações do personagem;
     cond1 = validarDefesa()
     cond2 = validarAtaque()
@@ -212,7 +267,7 @@ function validar() {
 
     // Condicional que imprime propriedades do personagens se todas condições forem verdadeiras;
     if(cond1&&cond2&&cond3&&cond4) {
-      infos = `<tr><td>${personagem.nome}</td> <td>${personagem.hp}</td> <td>${personagem.ataque}</td> <td>${personagem.defesa}</td> <td>${personagem.arma}</td> <td>${personagem.item}</td></tr>`;
+      infos = `<tr><td>${personagem.nome}</td> <td>${personagem.hp}</td> <td>${personagem.ataque}</td> <td>${personagem.defesa}</td> <td>${personagem.arma}</td> <td>${personagem.item}</td><td id="td-validar"> <button id="btn-validar" onclick="validar()">Validar</button></td></tr>`;
       personagens.push(infos)  
 
     // Mensagem de confirmação da validação do personagem;

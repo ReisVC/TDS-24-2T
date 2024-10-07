@@ -39,7 +39,7 @@
             <option>Ocarina</option>
             <option>Life Heart</option>
         </select> <br>
-        <button onclick="validar()">Validar Personagem</button>
+        <button class="glow-on-hover" onclick="validar()">Validar Personagem</button>
     </form>
     <strong><p id="par"></p></strong>
     </div>
@@ -53,17 +53,19 @@
                 <th>Defesa</th>
                 <th>Arma</th>
                 <th>Item</th>
+                <th>Validar</th>
             </tr>
             <tr>
-                <td id="nomeTabela"></td>
-                <td id="vidaTabela"></td>
-                <td id="ataqueTabela"></td>
-                <td id="defesaTabela"></td>
-                <td id="armaTabela"></td>
-                <td id="itemTabela"></td>
+                <td id="nomeTabela">Vitor</td>
+                <td id="vidaTabela">21</td>
+                <td id="ataqueTabela">21</td>
+                <td id="defesaTabela">21</td>
+                <td id="armaTabela">Master Sword</td>
+                <td id="itemTabela">Ocarina</td>
+                <td id="td-validar"> <button id="btn-validar" onclick="validar()">Validar</button></td>
             </tr>
         </table>
-        <button id="limpar" onclick="limparTabela()">Limpar Tabela</button>
+        <button class="glow-on-hover"  id="limpar" onclick="limparTabela()">Limpar Tabela</button>
     </div>
     <header></header>
 </body>
