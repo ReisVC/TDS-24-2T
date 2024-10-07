@@ -1,4 +1,4 @@
-
+// Nomes: VITOR REIS & LUCAS WILLIAM;
 // Função para validar o nome do personagem;
 function validarNome() {
 
