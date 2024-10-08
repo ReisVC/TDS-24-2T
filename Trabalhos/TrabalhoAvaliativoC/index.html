@@ -11,18 +11,18 @@
 <body>
     <script src="index.js"></script>    
     <div class="titulo">
-        <h1>Validação de Personagens</h1>
+        <h1 id="titlePage">Validar Condição de Teste nº 1/5</h1>
     </div>
     <div>
     <form>
         <label for="nome">Nome</label><br>
-        <input type="text" name="nome" id="nome" class="input"><br>
+        <input type="text" name="nome" id="nome" class="input" value="@Reis_VC"><br>
         <label for="hp">Níveis de Vida</label><br>
-        <input type="number" name="hp" id="hp"><br>
+        <input type="number" name="hp" id="hp" value="21"><br>
         <label for="ataque">Ataque</label><br>
-        <input type="number" name="ataque" id="ataque"><br>
+        <input type="number" name="ataque" id="ataque" value="30"><br>
         <label for="defesa">Defesa</label><br>
-        <input type="number" name="defesa" id="defesa"><br>
+        <input type="number" name="defesa" id="defesa" value="25"><br>
         <label for="arma">Arma</label><br>
         <select name="select" id="select">
             <option selected>Master Sword</option>
@@ -36,7 +36,7 @@
             <option>Smoke Bomb</option>
             <option>Lantern</option>
             <option>Hookshot</option>
-            <option>Ocarina</option>
+            <option selected>Ocarina</option>
             <option>Life Heart</option>
         </select> <br>
         <button class="glow-on-hover" onclick="validar()">Validar Personagem</button>
@@ -53,16 +53,16 @@
                 <th>Defesa</th>
                 <th>Arma</th>
                 <th>Item</th>
-                <th>Validar</th>
+                <!-- <th>Validar</th> -->
             </tr>
             <tr>
-                <td id="nomeTabela">Vitor</td>
-                <td id="vidaTabela">21</td>
-                <td id="ataqueTabela">21</td>
-                <td id="defesaTabela">21</td>
-                <td id="armaTabela">Master Sword</td>
-                <td id="itemTabela">Ocarina</td>
-                <td id="td-validar"> <button id="btn-validar" onclick="validar()">Validar</button></td>
+                <td id="nomeTabela"></td>
+                <td id="vidaTabela"></td>
+                <td id="ataqueTabela"></td>
+                <td id="defesaTabela"></td>
+                <td id="armaTabela"></td>
+                <td id="itemTabela"></td>
+                <!-- <td id="td-validar"> <button id="btn-validar" onclick="validar()">Validar</button></td> -->
             </tr>
         </table>
         <button class="glow-on-hover"  id="limpar" onclick="limparTabela()">Limpar Tabela</button>
