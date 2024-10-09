@@ -247,6 +247,16 @@ let personagem = {
     item: ""
 }
 
+function esvaziarInput() {
+   document.getElementById("nome").value = "" 
+   document.getElementById("hp").value = ""
+   document.getElementById("ataque").value = ""
+   document.getElementById("defesa").value = ""
+   document.getElementById("select2").value = "Smoke Bomb"
+   document.getElementById("select").value = "Master Sword"
+   document.getElementById("titlePage").innerHTML = "Valide seu personagem!"
+}
+
 let personagens = []
 let infos
 
@@ -282,6 +292,7 @@ function validar() {
     for(let i = 0; i < personagens.length; i++) {
     tabela += personagens[i]}
 
+    let contador = 0
     // Variável que imprime a estrutura total da tabela;
     document.getElementById("table").innerHTML = tabela
       
@@ -294,7 +305,7 @@ function validar() {
     document.getElementById("select2").value = "Ocarina"
     document.getElementById("select").value = "Hylian Shield"
     document.getElementById("titlePage").innerHTML = "Validar Condição de Teste nº 2/5"
-
+    contador +=1
     }
 
     // Condição de Teste nº 2/4
@@ -306,7 +317,7 @@ function validar() {
       document.getElementById("select2").value = "Lantern"
       document.getElementById("select").value = "Boomerang"
       document.getElementById("titlePage").innerHTML = "Validar Condição de Teste nº 3/5"
-
+      contador +=1
       }
 
     // Condição de Teste nº 3/4
@@ -318,7 +329,7 @@ function validar() {
          document.getElementById("select2").value = "Ocarina"
          document.getElementById("select").value = "Master Sword"
          document.getElementById("titlePage").innerHTML = "Validar Condição de Teste nº 4/5"
-
+         contador +=1
          }
 
     // Condição de Teste nº 4/4
@@ -330,21 +341,21 @@ function validar() {
       document.getElementById("select2").value = "Life Heart"
       document.getElementById("select").value = ""
       document.getElementById("titlePage").innerHTML = "Validar Condição de Teste nº 5/5"
-
+      contador +=1
       }
     
     // Condição para sair dos testes de validação;
-    if(personagens.length >= 5) {
+    switch(contador) {
+      case 4: 
+      esvaziarInput()
+      contador += 1
+      break;
 
-    // Estrutura que limpa os campos de escolha do usuário;
-    document.getElementById("nome").value = "" 
-    document.getElementById("hp").value = ""
-    document.getElementById("ataque").value = ""
-    document.getElementById("defesa").value = ""
-    document.getElementById("select2").value = "Smoke Bomb"
-    document.getElementById("select").value = "Master Sword"
-    document.getElementById("titlePage").innerHTML = "Valide seu personagem!"
+      case 5: 
+      esvaziarInput()
+      break;
     }
+   
     }
 
 }
